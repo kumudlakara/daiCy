@@ -1,5 +1,5 @@
 #include<stdio.h>
-#include "dcarray.h"
+#include "daiCy.h"
 
 int main(){
 	

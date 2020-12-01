@@ -7,16 +7,18 @@ LDIR = ../lib
 
 LIBS = -lm
 
-_DEPS = dcarray.h
+_DEPS = daiCy.h
 DEPS = $(patsubst %,$(IDIR)/%,$(_DEPS))
 
-_OBJ = test.o dcarray.o
-OBJ = $(patsubst %,$(ODIR)/%,$(_OBJ))
+_OBJ1 = dcarray_test.o daiCy.o
+_OBJ2 = dcstring_test.o daiCy.o
+OBJ1 = $(patsubst %,$(ODIR)/%,$(_OBJ1))
+OBJ2 = $(patsubst %,$(ODIR)/%,$(_OBJ2))
 
 $(ODIR)/%.o: %.c $(DEPS)
 	$(CC) -c -o $@ $< $(CFLAGS)
 
-test: $(OBJ)
+test: $(OBJ2)
 	$(CC) -o $@ $^ $(CFLAGS) $(LIBS)
 
 .PHONY: clean
