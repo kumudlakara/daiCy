@@ -49,4 +49,28 @@ char dccharAt(dcstr*, int index);
 dcstr dcstrconcat(dcstr*, dcstr*);
 
 
+//struct for dcfarray
+typedef struct dcfArray{
+	int capacity;
+	float *data;
+	int size;
+}dcfarr;
+
+
+//intialize the array
+void dcfarray(dcfarr*);
+//expand the array to double the size
+void dcfexpand(dcfarr*);
+//append value to end of array
+void dcfappend(dcfarr*, float value);
+//free the memory allocated to array
+void dcffree(dcfarr*);
+//set value at index
+void dcfset(dcfarr*, int index, float value);
+//get value at index
+float dcfget(dcfarr*, int index);
+//create a copy of array
+dcfarr dcfcopy(dcfarr*);
+//sort the array
+void dcfsort(dcfarr*, char order[]);
 
