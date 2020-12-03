@@ -1,5 +1,6 @@
 #define ARR_SIZE 100
 #define DEFAULT_ORDER "ASC"
+#define STACK_SIZE 100
 
 //struct for dcarray
 typedef struct dcArray{
@@ -74,3 +75,20 @@ dcfarr dcfcopy(dcfarr*);
 //sort the array
 void dcfsort(dcfarr*, char order[]);
 
+
+//struct for dcstacks
+typedef struct dcStack{
+	int top;
+	int *data;
+	int capacity;
+	int size;
+}dcstack;
+
+//initialize the dcstack
+void dcstack_init(dcstack*);
+//push into dcstack
+void dcpush(dcstack*, int);
+//pop element from stack
+int dcpop(dcstack*);
+//free the memoray allocated to the stack
+void dcfreestack(dcstack*);
