@@ -534,6 +534,14 @@ void dcfsort(dcfarr *arr, char order[]){
 
 ///////////////////////////////dcStack////////////////////////////////////
 void dcstack_init(dcstack* arr){
+	/*
+	Initialize the dcstack. Allocate memory for the stack and set top = -1. 
+
+	Parameters
+	----------
+	arr: dcstack pointer
+
+	*/
 	arr->data = (int*)malloc(sizeof(int)*STACK_SIZE);
 	arr->capacity = STACK_SIZE;
 	arr->size = 0;
@@ -541,6 +549,14 @@ void dcstack_init(dcstack* arr){
 }
 
 void dcpush(dcstack* arr, int value){
+	/*
+	Push `value` to the stack.
+
+	Parameters
+	----------
+	arr: dcstack pointer
+	value: int value to push to the stack
+	*/
 	if(arr->top < arr->capacity){
 	arr->data[++(arr->top)] = value;
 	arr->size++;
@@ -553,6 +569,17 @@ void dcpush(dcstack* arr, int value){
 }
 
 int dcpop(dcstack *arr){
+	/*
+	Pop element from the stack.
+
+	Parameters
+	----------
+	arr: dcstack pointer
+
+	Returns
+	-------
+	value: int value at stack top.
+	*/
 	if(arr->top < 0){
 		//raise underflow error
 		printf("DaiCyError: Stack Underflow!");
@@ -562,5 +589,12 @@ int dcpop(dcstack *arr){
 }
 
 void dcfreestack(dcstack *arr){
+	/*
+	Free the memory allocated to the stack.
+
+	Parameters
+	----------
+	arr: dcstack pointer
+	*/
 	free(arr->data);
 }
