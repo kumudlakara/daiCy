@@ -75,7 +75,7 @@ void dcset(dcarr *arr, int index, int value){
 	}
 	else{
 		//raise warning/error
-		printf("FATAL ERROR! Index: %d out of bounds\ndcset failed!\n", index);
+		printf("DaiCyError: Index: %d out of bounds\ndcset failed!\n", index);
 		exit(1);
 	}
 }
@@ -95,7 +95,7 @@ int dcget(dcarr *arr, int index){
 	*/
 	if(index >= arr->size || index < 0){
 		//raise error/warning
-		printf("FATAL ERROR! Index: %d out of bounds. dcget failed!\n", index);
+		printf("DaicyError: Index: %d out of bounds. dcget failed!\n", index);
 		
 	}
 	return arr->data[index];
@@ -196,7 +196,7 @@ void dcsort(dcarr *arr, char order[]){
 	}
 	else{
 		//raise error/warning
-		printf("ERROR: dcsort argument[1] mismatch. Make sure argument[1] = ASC or argument[1] = DSC\n");
+		printf("DaiCyError: dcsort argument[1] mismatch. Make sure argument[1] = ASC or argument[1] = DSC\n");
 		printf("Unable to sort array\n");
 		return;
 	}
@@ -262,7 +262,7 @@ char dccharAt(dcstr *str, int index){
 	*/
 	if(index >= str->length || index < 0){
 		//raise error/warning
-		printf("FATAL ERROR! Index: %d out of bounds. dcget failed!\n", index);
+		printf("DaiCyError: Index: %d out of bounds. dcget failed!\n", index);
 		
 	}
 	return str->data[index];
@@ -404,7 +404,7 @@ void dcfset(dcfarr *arr, int index, float value){
 	}
 	else{
 		//raise warning/error
-		printf("FATAL ERROR! Index: %d out of bounds\ndcset failed!\n", index);
+		printf("DaiCyError: Index: %d out of bounds\ndcset failed!\n", index);
 		exit(1);
 	}
 }
@@ -424,7 +424,7 @@ float dcfget(dcfarr *arr, int index){
 	*/
 	if(index >= arr->size || index < 0){
 		//raise error/warning
-		printf("FATAL ERROR! Index: %d out of bounds. dcget failed!\n", index);
+		printf("DaiCyError: Index: %d out of bounds. dcget failed!\n", index);
 		
 	}
 	return arr->data[index];
@@ -525,7 +525,7 @@ void dcfsort(dcfarr *arr, char order[]){
 	}
 	else{
 		//raise error/warning
-		printf("ERROR: dcsort argument[1] mismatch. Make sure argument[1] = ASC or argument[1] = DSC\n");
+		printf("DaiCyError: dcsort argument[1] mismatch. Make sure argument[1] = ASC or argument[1] = DSC\n");
 		printf("Unable to sort array\n");
 		return;
 	}
@@ -534,14 +534,6 @@ void dcfsort(dcfarr *arr, char order[]){
 
 ///////////////////////////////dcStack////////////////////////////////////
 void dcstack_init(dcstack* arr){
-	/*
-	Initialize the dcstack. Allocate memory for the stack and set top = -1. 
-
-	Parameters
-	----------
-	arr: dcstack pointer
-
-	*/
 	arr->data = (int*)malloc(sizeof(int)*STACK_SIZE);
 	arr->capacity = STACK_SIZE;
 	arr->size = 0;
@@ -549,14 +541,6 @@ void dcstack_init(dcstack* arr){
 }
 
 void dcpush(dcstack* arr, int value){
-	/*
-	Push `value` to the stack.
-
-	Parameters
-	----------
-	arr: dcstack pointer
-	value: int value to push to the stack
-	*/
 	if(arr->top < arr->capacity){
 	arr->data[++(arr->top)] = value;
 	arr->size++;
@@ -569,17 +553,6 @@ void dcpush(dcstack* arr, int value){
 }
 
 int dcpop(dcstack *arr){
-	/*
-	Pop element from the stack.
-
-	Parameters
-	----------
-	arr: dcstack pointer
-
-	Returns
-	-------
-	value: int value at stack top.
-	*/
 	if(arr->top < 0){
 		//raise underflow error
 		printf("DaiCyError: Stack Underflow!");
@@ -588,13 +561,147 @@ int dcpop(dcstack *arr){
 	return arr->data[(arr->top)--];
 }
 
+void dcshow_stack(dcstack *arr){
+	for(int i = 0; i <= arr->top; i++){
+		printf("%d ", arr->data[i]);
+	}
+	printf("\n");
+}
+
 void dcfreestack(dcstack *arr){
+	free(arr->data);
+}
+
+
+///////////////////////////////dcQueue////////////////////////////////////
+
+void dcqueue_init(dcqueue *arr){
 	/*
-	Free the memory allocated to the stack.
+	Initializes the dcqueue
 
 	Parameters
 	----------
-	arr: dcstack pointer
+	arr : dcqueue pointer
+	*/
+	arr->capacity = QUEUE_SIZE;
+	arr->data = (int*)malloc(sizeof(int)*arr->capacity);
+	arr->front = -1;
+	arr->rear = -1;
+}
+
+void dcenq(dcqueue *arr, int value){
+	/*
+	Adds an element to the end of the dcqueue
+
+	Parameters
+	----------
+	arr: dcqueue pointer
+	value: int value to enqueue
+	*/
+	if(((arr->rear == arr->capacity - 1) && (arr->front == 0)) || (arr->rear == arr->front - 1))
+	{
+		//raise overflow warning
+		printf("DaiCyError: Queue Overflow!\n");
+		exit(1);
+	}
+
+	else if(arr->front == -1 && arr->rear == -1)
+	{
+		arr->data[++(arr->rear)] = value;
+		arr->front = arr->rear;
+	}
+
+	else if( arr->front != 0 && arr->rear == arr->capacity-1)
+	{
+		arr->rear = 0;
+		arr->data[arr->rear] = value;
+	}
+	else
+	{
+		arr->data[++(arr->rear)] = value;
+	}	
+}
+
+int dcdeq(dcqueue *arr){
+	/*
+	Removes an element from front of dcqueue
+
+	Parameters
+	----------
+	arr: dcqueue pointer
+
+	Returns
+	-------
+	Int value from front of dcqueue
+	*/
+	int temp;
+	if(arr->front == -1 && arr->rear == -1)
+	{
+		//raise underflow warning
+		printf("DaiCyError: Queue Underflow!\n");
+		exit(1);
+	}
+
+	else if(arr->front == arr->rear)
+	{	temp = arr->front;
+		arr->front = -1;
+		arr->rear = -1;
+		return arr->data[temp];
+	}
+
+	else if(arr->front == arr->capacity - 1 && arr->rear < arr->front)
+	{
+		temp = arr->front;
+		arr->front = 0;
+		return arr->data[temp];
+	}
+
+	else
+	{	temp = arr->front;
+		(arr->front)++;
+		return arr->data[temp];
+	}
+
+}
+
+void dcshow_queue(dcqueue *arr){
+	/*
+	Displays the dcqueue contents
+
+	Parameters
+	----------
+	arr: dcqueue pointer
+	*/
+	if(arr->front <= arr->rear)
+	{
+		for(int i = arr->front; i <= arr->rear; i++)
+		{
+			printf("%d ", arr->data[i]);
+		}
+		printf("\n");
+	}
+
+	if(arr->front > arr->rear)
+	{
+		for(int i = arr->front; i < arr->capacity; i++)
+		{
+			printf("%d ", arr->data[i]);
+		}
+		for(int i = 0; i <= arr->rear ; i++)
+		{
+			printf("%d ", arr->data[i]);
+		}
+		printf("\n");
+	}
+}
+
+void dcfreequeue(dcqueue *arr){
+	/*
+	Frees memory allocated to dcqueue
+
+	Parameters
+	----------
+	arr: dcqueue pointer
 	*/
 	free(arr->data);
 }
