@@ -1,6 +1,7 @@
 #define ARR_SIZE 100
 #define DEFAULT_ORDER "ASC"
 #define STACK_SIZE 100
+#define QUEUE_SIZE 100
 
 //struct for dcarray
 typedef struct dcArray{
@@ -90,5 +91,27 @@ void dcstack_init(dcstack*);
 void dcpush(dcstack*, int);
 //pop element from stack
 int dcpop(dcstack*);
+//display the stack
+void dcshow_stack(dcstack*);
 //free the memoray allocated to the stack
 void dcfreestack(dcstack*);
+
+
+//struct for dcqueue
+typedef struct dcQueue{
+	int front;
+	int rear;
+	int capacity;
+	int *data;
+}dcqueue;
+
+//initialize the dcqueue
+void dcqueue_init(dcqueue*);
+//enqueue an element into dcqueue
+void dcenq(dcqueue*, int);
+//dequeue an element from the dcqueue
+int dcdeq(dcqueue*);
+//display content of te queue
+void dcshow_queue(dcqueue*);
+//free the memory allocated to the queue
+void dcfreequeue(dcqueue*);
