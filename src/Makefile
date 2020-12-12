@@ -1,35 +1,43 @@
-IDIR =../include
 CC=gcc
+IDIR = ../include
 CFLAGS=-I$(IDIR)
 
-ODIR = obj
+ODIR = obj/
 LDIR = ../lib
+TDIR = test/
 
 LIBS = -lm
 
 _DEPS = daiCy.h
 DEPS = $(patsubst %,$(IDIR)/%,$(_DEPS))
 
-_OBJ1 = dcarray_test.o daiCy.o
-_OBJ2 = dcstring_test.o daiCy.o
-_OBJ3 = dcfarray_test.o daiCy.o
-_OBJ4 = dcstack_test.o daiCy.o
-_OBJ5 = dcqueue_test.o daiCy.o
-OBJ1 = $(patsubst %,$(ODIR)/%,$(_OBJ1))
-OBJ2 = $(patsubst %,$(ODIR)/%,$(_OBJ2))
-OBJ3 = $(patsubst %,$(ODIR)/%,$(_OBJ3))
-OBJ4 = $(patsubst %,$(ODIR)/%,$(_OBJ4))
-OBJ5 = $(patsubst %,$(ODIR)/%,$(_OBJ5))
+#_OBJ = dcarray.o dcfarray.o dcstring.o dcstack.o dcqueue.o
+#OBJ = $(patsubst %,$(ODIR)%,$(_OBJ))
 
-$(ODIR)/%.o: %.c $(DEPS)
-	$(CC) -c -o $@ $< $(CFLAGS)
+testf: $(TDIR)dcarray_test.c daiCy.so
+	$(CC) -o $@ $(CFLAGS) $< daiCy.so
+daiCy.so: dcarray.o dcfarray.o dcstring.o dcstack.o dcqueue.o
+	ar crv $@ obj/dcarray.o obj/dcfarray.o obj/dcstring.o obj/dcstack.o obj/dcqueue.o
+#	mv $@ $(LDIR)
+dcarray.o: dcarray.c $(DEPS)
+	$(CC) -c $(CFLAGS) $< 
+	mv $@ $(ODIR)
 
-test: $(OBJ5)
-	$(CC) -o $@ $^ $(CFLAGS) $(LIBS)
+dcfarray.o: dcfarray.c $(DEPS)
+	$(CC) -c $< $(CFLAGS)
+	mv $@ $(ODIR)
 
-.PHONY: clean
+dcstring.o: dcstring.c $(DEPS)
+	$(CC) -c $(CFLAGS) $< 
+	mv $@ $(ODIR)
 
-clean:
-	rm -f $(ODIR)/*.o *~ core $(INCDIR)/*~
+dcstack.o: dcstack.c $(DEPS)
+	$(CC) -c $(CFLAGS) $< 
+	mv $@ $(ODIR)
 
+dcqueue.o: dcqueue.c $(DEPS)
+	$(CC) -c $(CFLAGS) $< 
+	mv $@ $(ODIR)
 
+clean: 
+	rm -f $(ODIR)/*.o 
