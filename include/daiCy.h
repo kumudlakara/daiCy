@@ -29,6 +29,24 @@ dcarr dccopy(dcarr*);
 void dcsort(dcarr*, char order[]);
 
 
+//struct for dcmatrix
+typedef struct dcMatrix{
+	int r;
+	int c;
+	int **data;
+}dcmat;
+
+void dcmatrix(dcmat*, int r, int c);
+dcmat dcmatadd(dcmat*, dcmat*);
+dcmat dcmatsub(dcmat*, dcmat*);
+dcmat dcmatones(int r, int c);
+dcmat dcmatzeros(int r, int c);
+dcmat dcmatmul(dcmat*, dcmat*);
+dcmat dcmatcopy(dcmat*);
+int dcmattrace(dcmat*);
+void dcmatshow(dcmat*);
+dcmat todcmat(int **mat, int r, int c);
+
 //struct for dcstring
 typedef struct dcString{
 	char *data;
