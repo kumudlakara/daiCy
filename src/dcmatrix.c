@@ -8,8 +8,10 @@
 ///////////////////////////////dcMatrix////////////////////////////////////
 void dcmatrix(dcmat *mat, int r, int c){
 	mat->data = (int**)calloc(r, sizeof(int*));
-	for(int i=0; i<c; i++)
+	for(int i=0; i<r; i++)
 		mat->data[i] = (int*)calloc(c, sizeof(int));
+	mat->r = r;
+	mat->c = c;
 }
 
 dcmat dcmatadd(dcmat *mat1, dcmat *mat2){
@@ -20,7 +22,7 @@ dcmat dcmatadd(dcmat *mat1, dcmat *mat2){
 	rmat.r = mat1->r;
 	rmat.c = mat1->c;
 	rmat.data = (int**)calloc(rmat.r, sizeof(int*));
-	for(int i=0; i<rmat.c; i++)
+	for(int i=0; i<rmat.r; i++)
 		rmat.data[i] = (int*)calloc(rmat.c, sizeof(int));
 	for(int i=0; i<rmat.r; i++)
 		for(int j=0; j<rmat.c; j++)
@@ -36,7 +38,7 @@ dcmat dcmatsub(dcmat *mat1, dcmat *mat2){
 	rmat.r = mat1->r;
 	rmat.c = mat1->c;
 	rmat.data = (int**)calloc(rmat.r, sizeof(int*));
-	for(int i=0; i<rmat.c; i++)
+	for(int i=0; i<rmat.r; i++)
 		rmat.data[i] = (int*)calloc(rmat.c, sizeof(int));
 	for(int i=0; i<rmat.r; i++)
 		for(int j=0; j<rmat.c; j++)
@@ -49,7 +51,7 @@ dcmat dcmatones(int r, int c){
 	rmat.r = r;
 	rmat.c = c;
 	rmat.data = (int**)calloc(rmat.r, sizeof(int*));
-	for(int i=0; i<rmat.c; i++)
+	for(int i=0; i<rmat.r; i++)
 		rmat.data[i] = (int*)calloc(rmat.c, sizeof(int));
 	for(int i=0; i<rmat.r; i++)
 		for(int j=0; j<rmat.c; j++)
@@ -62,7 +64,7 @@ dcmat dcmatzeros(int r, int c){
 	rmat.r = r;
 	rmat.c = c;
 	rmat.data = (int**)calloc(rmat.r, sizeof(int*));
-	for(int i=0; i<rmat.c; i++)
+	for(int i=0; i<rmat.r; i++)
 		rmat.data[i] = (int*)calloc(rmat.c, sizeof(int));
 	for(int i=0; i<rmat.r; i++)
 		for(int j=0; j<rmat.c; j++)
@@ -75,7 +77,7 @@ dcmat dcmatcopy(dcmat *mat){
 	rmat.r = mat->r;
 	rmat.c = mat->c;
 	rmat.data = (int**)calloc(rmat.r, sizeof(int*));
-	for(int i=0; i<rmat.c; i++)
+	for(int i=0; i<rmat.r; i++)
 		rmat.data[i] = (int*)calloc(rmat.c, sizeof(int));
 	for(int i=0; i<rmat.r; i++)
 		for(int j=0; j<rmat.c; j++)
@@ -106,7 +108,7 @@ dcmat todcmat(int **a, int r, int c){
 	rmat.r = r;
 	rmat.c = c;
 	rmat.data = (int**)calloc(rmat.r, sizeof(int*));
-	for(int i=0; i<rmat.c; i++)
+	for(int i=0; i<rmat.r; i++)
 		rmat.data[i] = (int*)calloc(rmat.c, sizeof(int));
 	for(int i=0; i<rmat.r; i++)
 		for(int j=0; j<rmat.c; j++)
@@ -123,11 +125,26 @@ dcmat dcmatmul(dcmat *mat1, dcmat *mat2){
 	rmat.r = mat1->r;
 	rmat.c = mat2->c;
 	rmat.data = (int**)calloc(rmat.r, sizeof(int*));
-	for(int i=0; i<rmat.c; i++)
+	for(int i=0; i<rmat.r; i++)
 		rmat.data[i] = (int*)calloc(rmat.c, sizeof(int));
 	for(int i=0; i<rmat.r; i++)
 		for(int j=0; j<rmat.c; j++)
 			for(int k = 0; k<mat1->c; k++)
 				rmat.data[i][j] += mat1->data[i][k]*mat2->data[k][j];
+	return rmat;
+}
+
+dcmat dcmattranspose(dcmat *mat){
+	dcmat rmat;
+	rmat.r = mat->c;
+	rmat.c = mat->r;
+	rmat.data = (int**)calloc(rmat.r, sizeof(int*));
+	for(int i=0; i<rmat.r; i++)
+		rmat.data[i] = (int*)calloc(rmat.c, sizeof(int));
+	for(int i=0; i<mat->r; i++){
+		for(int j=0; j<mat->c; j++){
+			rmat.data[j][i] = mat->data[i][j];
+		}
+	}
 	return rmat;
 }

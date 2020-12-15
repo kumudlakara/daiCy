@@ -7,12 +7,16 @@ int main(){
 	dcmat m, n;
 	dcmatrix(&m, 3, 4);
 	printf("after dcmatrix initialization:\n");
-	//dcmatshow(&m);
-	n = dcmatones(3,4);
+	for(int i=0; i<m.r; i++)
+		for(int j=0; j<m.c; j++)
+			m.data[i][j] = j;
+	dcmatshow(&m);
+	n = dcmatones(4,4);
 	printf("initialization using dcmatones:\n");
 	dcmatshow(&n);
 	dcmat s;
-	s = dcmatadd(&m, &n);
+	printf("before dcmatadd");
+	s = dcmatadd(&n, &n);
 	printf("After dcmatadd:\n");
 	dcmatshow(&s);
 	dcmat d;
@@ -20,13 +24,13 @@ int main(){
 	z = dcmatzeros(3,4);
 	printf("after using dcmatzeros:\n");
 	dcmatshow(&z);
-	d = dcmatsub(&m, &n);
+	d = dcmatsub(&z, &n);
 	printf("after dcmatsub:\n");
 	dcmatshow(&d);
-	printf("dcmattrace: %d\n", dcmattrace(&m));
+	printf("dcmattrace: %d\n", dcmattrace(&n));
 	dcmat p;
-	dcmatrix(&p, 4, 2);
-	p = dcmatmul(&m , &p);
+	//dcmatrix(&p, 4, 2);
+	p = dcmatmul(&m , &n);
 	printf("after dcmatmul:\n");
 	dcmatshow(&p);
 	int **a;
@@ -37,7 +41,11 @@ int main(){
 		for(int j=0; j<3; j++)
 			a[i][j] = 3;
 	dcmat t;
-	t = todcmat(a, 2, 3);
+	t = todcmat(a, 3, 3);
 	printf("after converting to dcmat:\n");
 	dcmatshow(&t);
+	dcmat tr;
+	tr = dcmattranspose(&m);
+	printf("after dcmatttranspose:\n");
+	dcmatshow(&tr);
 }

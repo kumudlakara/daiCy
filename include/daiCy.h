@@ -46,6 +46,7 @@ dcmat dcmatcopy(dcmat*);
 int dcmattrace(dcmat*);
 void dcmatshow(dcmat*);
 dcmat todcmat(int **mat, int r, int c);
+dcmat dcmattranspose(dcmat*);
 
 //struct for dcstring
 typedef struct dcString{
