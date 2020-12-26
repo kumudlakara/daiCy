@@ -11,21 +11,21 @@ typedef struct dcArray{
 }dcarr;
 
 
-//intialize the array
+//intialize the dcarray
 void dcarray(dcarr*);
-//expand the array to double the size
+//expand the dcarray to double the size
 void dcexpand(dcarr*);
-//append value to end of array
+//append value to end of dcarray
 void dcappend(dcarr*, int value);
-//free the memory allocated to array
+//free the memory allocated to dcarray
 void dcfree(dcarr*);
 //set value at index
 void dcset(dcarr*, int index, int value);
 //get value at index
 int dcget(dcarr*, int index);
-//create a copy of array
+//create a copy of dcarray
 dcarr dccopy(dcarr*);
-//sort the array
+//sort the dcarray
 void dcsort(dcarr*, char order[]);
 
 
@@ -36,16 +36,27 @@ typedef struct dcMatrix{
 	int **data;
 }dcmat;
 
+//initialize the dcmatric
 void dcmatrix(dcmat*, int r, int c);
+//add two dcmats
 dcmat dcmatadd(dcmat*, dcmat*);
+//subtract two dcmats
 dcmat dcmatsub(dcmat*, dcmat*);
+//create dcmat of ones
 dcmat dcmatones(int r, int c);
+//create dcmat of zeros
 dcmat dcmatzeros(int r, int c);
+//multiply two dcmats
 dcmat dcmatmul(dcmat*, dcmat*);
+//make a copy of a dcmat
 dcmat dcmatcopy(dcmat*);
+//find trace of dcmat
 int dcmattrace(dcmat*);
+//display the dcmat
 void dcmatshow(dcmat*);
+//convert to matrix to dcmat
 dcmat todcmat(int **mat, int r, int c);
+//find transpose of dcmat
 dcmat dcmattranspose(dcmat*);
 
 //struct for dcstring
