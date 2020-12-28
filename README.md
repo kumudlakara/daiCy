@@ -1,4 +1,65 @@
 # DaiCy :blossom: 
 C library for Linux
 
-DaiCy introduces enhanced features for the C language such as automatic array size expansion, dcstring datatype, dcmatrix datatype and much more. Each DaiCy datatype makes coding in the C language much more convinient by introducing functionality such as sorting, reversing, string manipulation etc which are features of all modern day programming languages. DaiCy aims to bridge the gap between C and the modern day programming languages. 
+DaiCy introduces enhanced features for the C language such as automatic array size expansion, dcstring datatype, dcmatrix datatype and much more. Each DaiCy datatype makes coding in the C language much more convinient by introducing functionality such as sorting, reversing, string manipulation etc. DaiCy aims to bridge the gap between C and the modern day programming languages. 
+
+What follows are the DaiCy datatypes and some of the important functions associated with them:
+
+
+# DaiCy datatypes:
+ ## 1. DaiCy Array (dcarr)
+ 
+ dcarrays have all the properties of vanilla arrays in C. In addition however, they support automatic memory allocation when the size of the array increases.
+ 
+ ### Important Functions
+ 
+ - `void dcexpand(dcarr *arr)` : automatic memory expansion on overflow.
+ - `void dcappend(dcarr *arr, int value)` : add an element to the end of the dcarray.
+ - `void dcset(dcarr *arr, int index, int value)` : set a particular value at the given index
+ - `int dcget(dcarr *arr, int index)` : get the value at the index
+ - `dcarr dccopy(dcarr *arr)` : create a copy of the dcarray
+ - `void dcsort(dcarr *arr, char *order)` : sort the dcarray in  ascending or descending order. DaiCy uses quick sort for all sorting functions given its favourable time complexity.
+ 
+ 
+ ## 2. DaiCy FloatArray (dcfarr)
+ 
+ dcfarrays have all the properties of vanilla arrays in C and are infact identical to dcarrays except the datatype here being float. In addition however, they support automatic memory allocation when the size of the array increases.
+ 
+ ### Important Functions
+ 
+ - `void dcfexpand(dcfarr *arr)` : automatic memory expansion on overflow.
+ - `void dcfappend(dcfarr *arr, int value)` : add an element to the end of the dcarray.
+ - `void dcfset(dcfarr *arr, int index, float value)` : set a particular value at the given index
+ - `float dcfget(dcfarr *arr, int index)` : get the value at the index
+ - `dcarr dcfcopy(dcfarr *arr)` : create a copy of the dcarray
+ - `void dcfsort(dcfarr *arr, char *order)` : sort the dcarray in  ascending or descending order. DaiCy uses quick sort for all sorting functions given its favourable time complexity.
+ 
+ 
+ *Note: C is not an OOP language and hence doesnot support polymorphism which means functions like sort, append, expand etc which are essentially the same need to be defined with separate names for separate datatypes and that is what has been done or DaiCy as well.*
+ 
+ 
+ ## 3. DaiCy String (dcstr)
+ 
+ C does not have a "String" datatype unlike many of the modern programming languages, dcstring introduces the the string datatype. It supports most string operations supported by languages such as python and java.
+ 
+ ### Important Functions
+ 
+ - `dcstr dcstrcopy(dcstr *str)` : create a copy of the string
+ - `char dccharAt(dcstr *str, int index)` : get character at the specified index value)
+ - `dcstr dcstrconcat(dcstr *str1, dcstr *str2)` : concatenate two strings and return the new string
+ - `int dcnum_words(dcstr *str)` : number of words in the string.
+ - `void dccapitalize(dcstr *str)` : capitalize the first letter of each word in the string.
+ 
+ #### To be added:
+ - dctoupper()
+ - dctolower()
+ - dcisupper()
+ - dcislower()
+ 
+ 
+ 
+ 
+ 
+ ##### *note:This description/documentation is under process and is not complete as of now. The complete details for all functions can be found as comments in the function definitions in the respecitve files under the [src](https://github.com/kumudlakara/daiCy/tree/main/src) directory.* 
+ 
+ 
