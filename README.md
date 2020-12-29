@@ -56,8 +56,25 @@ What follows are the DaiCy datatypes and some of the important functions associa
  - dcisupper()
  - dcislower()
  
+  ## 4. DaiCy Matrix (dcmat)
  
+ dcmat is the matrix datatype that daiCy provides. It introduces the ability to add, subtract, mulitply matrices, find transose of a matrix and more. 
  
+ *Note: This datatype also introduces the new feautre of converting a normal C datatype to a DaiCy datatype. This feature is aimed to soon be added for all daiCy datatypes allowing the user to switch over to the daiCy datatypes at any point.*
+ 
+ ### Important Functions
+ - `dcmat dcmatadd(dcmat *mat1, dcmat *mat2)` : add two matrices and return the resultant
+ - `dcmat dcmatsub(dcmat *mat1, dcmat *mat2)` : subtract two matrices and return the resultant
+ - `dcmat dcmatmul(dcmat *mat1, dcmat *mat2)` : multiply two matrices
+ - `dcmat dcmatones(int r, int c)` : intialize a matrix of ones
+ - `dcmat dcmatzeros(int r, int c)` : initialize a matrix of zeros
+ - `dcmat dcmatcopy(dcmat *mat)` : create a copy of the matrix
+ - `int dcmattrace(dcmat *mat)` : find the trace of the matrix
+ - `void dcmatshow(dcmat *mat)` : display the matrix
+ - `dcmat todcmat(int **a, int r, int c)` : convert C datatype to DaiCy datatype
+ -  `dcmat dcmattranspose(dcmat *mat)` : find transpose of a matrix
+ 
+  *note:In case of dimensional ambiguity among the two matrices, DaiCyError is raised. The detailed definitions can viewed in the source code for [dcmatrix](https://github.com/kumudlakara/daiCy/blob/main/src/dcmatrix.c).* 
  
  
  ##### *note:This description/documentation is under process and is not complete as of now. The complete details for all functions can be found as comments in the function definitions in the respecitve files under the [src](https://github.com/kumudlakara/daiCy/tree/main/src) directory.* 
