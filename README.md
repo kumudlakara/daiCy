@@ -74,9 +74,27 @@ What follows are the DaiCy datatypes and some of the important functions associa
  - `dcmat todcmat(int **a, int r, int c)` : convert C datatype to DaiCy datatype
  -  `dcmat dcmattranspose(dcmat *mat)` : find transpose of a matrix
  
-  *note:In case of dimensional ambiguity among the two matrices, DaiCyError is raised. The detailed definitions can viewed in the source code for [dcmatrix](https://github.com/kumudlakara/daiCy/blob/main/src/dcmatrix.c).* 
+  *note: In case of dimensional ambiguity among the two matrices, DaiCyError is raised. The detailed definitions can viewed in the source code for [dcmatrix](https://github.com/kumudlakara/daiCy/blob/main/src/dcmatrix.c).* 
  
+ ## 5. DaiCy Stack (dcstack)
  
- ##### *note:This description/documentation is under process and is not complete as of now. The complete details for all functions can be found as comments in the function definitions in the respecitve files under the [src](https://github.com/kumudlakara/daiCy/tree/main/src) directory.* 
+dcstack introduces the the stack datatype. All stack operations like push, pop etc can be done on dcstacks. dcstack variables also have a "top" property which can be used to obtain the current position of the top pointer and hence access the top of the stack.
+ 
+ ### Important Functions
+ - `void dcpush(dcstack* arr, int value)` : push an element to the top of the stack
+ - `int dcpop(dcstack *arr)` : pop the element from the top of the stack
+ - `void dcshow_stack(dcstack *arr)` : display the contents of the stack
+
+
+## 6. DaiCy Queue (dcqueue)
+ 
+dcqueue introduces the the queue datatype. It can be manipulated and handled like any normal queue. The dcqueue variables also have front and rear properties which can be used to access the front and rear of the queue respectively. dcqueue works like any other normal queue where elements are added to the rear and removed from the front. In addition to this for efficient use of memory space dcqueues are actually implemented as circular queues under the hood.
+ 
+ ### Important Functions
+ - `void dcenq(dcqueue *arr, int value)` : add an element to the end of the queue
+ - `int dcdeq(dcqueue *arr)` : remove element from the front of the queue
+ - `void dcshow_queue(dcqueue *arr)` : display the contents of the queue
+ 
+ ##### *note: This description/documentation is under process and is not complete as of now. The complete details for all functions can be found as comments in the function definitions in the respecitve files under the [src](https://github.com/kumudlakara/daiCy/tree/main/src) directory.* 
  
  
