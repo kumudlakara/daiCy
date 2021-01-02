@@ -14,7 +14,7 @@ DEPS = $(patsubst %,$(IDIR)/%,$(_DEPS))
 #_OBJ = dcarray.o dcfarray.o dcstring.o dcstack.o dcqueue.o
 #OBJ = $(patsubst %,$(ODIR)%,$(_OBJ))
 
-testf: $(TDIR)dcmatrix_test.c daiCy.so
+testf: $(TDIR)dcstring_test.c daiCy.so
 	$(CC) -o $@ $(CFLAGS) $< daiCy.so
 daiCy.so: dcarray.o dcfarray.o dcstring.o dcstack.o dcqueue.o
 	ar crv $@ obj/dcarray.o obj/dcfarray.o obj/dcstring.o obj/dcstack.o obj/dcqueue.o obj/dcmatrix.o

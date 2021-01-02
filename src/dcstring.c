@@ -134,3 +134,61 @@ void dccapitalize(dcstr *str){
 	}
 }
 
+void dctoupper(dcstr *str){
+	for(int i=0;i<str->length; i++){
+		if(str->data[i] >= 97 && str->data[i] <= 122)
+			str->data[i] -= 32;
+	}
+}
+
+void dctolower(dcstr *str){
+	for(int i=0;i<str->length; i++){
+		if(str->data[i] >= 65 && str->data[i] <= 90)
+			str->data[i] += 32;
+	}
+}
+
+int dcislower(dcstr *str){
+	for(int i=0;i<str->length; i++){
+		if(str->data[i] >= 65 && str->data[i] <= 90){
+			return 0;
+		}
+	}
+	return 1;
+}
+
+int dcisupper(dcstr *str){
+	for(int i=0;i<str->length; i++){
+		if(str->data[i] >= 97 && str->data[i] <= 122){
+				return 0;
+			}
+	}
+	return 1;
+}
+
+int dcstrcmp(dcstr *str1, dcstr *str2){
+	int i = 0;
+	dcstr c1;
+	dcstr c2;
+	dcstring(&c1, str1->data);
+	dcstring(&c2, str2->data);
+	dctolower(&c1);
+	dctolower(&c2);
+	while(c1.data[i] != '\0' && c2.data[i] != '\0'){
+		if((c1.data[i] >= 97 && c2.data[i] <= 122)){
+		if(c1.data[i] == c2.data[i]){
+			i++;
+			continue;
+		}
+		else if(c1.data[i] >= c2.data[i]){
+			printf("returning\n");
+			return 1;
+		}
+		else{
+			return -1;
+		}
+	}
+	i++;
+}
+return 0;
+}

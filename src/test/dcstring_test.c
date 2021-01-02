@@ -19,6 +19,13 @@ int main(){
 	dcstr c;
 	c = dcstrconcat(&s, &p);
 	printf("After concatenating:%s\n", c.data);
+	printf("dcisupper: %d\n", dcisupper(&s));
+	printf("dcislower: %d\n", dcislower(&s));
+	dctoupper(&s);
+	printf("After dctoupper: %s\n", s.data);
+	dctolower(&s);
+	printf("After dctolower: %s\n", s.data);
+	printf("dcstrcmp: %d\n", dcstrcmp(&p, &s));
 	dcstrfree(&s);
 
 }

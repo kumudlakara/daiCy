@@ -59,6 +59,7 @@ dcmat todcmat(int **mat, int r, int c);
 //find transpose of dcmat
 dcmat dcmattranspose(dcmat*);
 
+
 //struct for dcstring
 typedef struct dcString{
 	char *data;
@@ -79,7 +80,16 @@ void dcstrfree(dcstr*);
 char dccharAt(dcstr*, int index);
 //concatenate two strings
 dcstr dcstrconcat(dcstr*, dcstr*);
-
+//convert entire string to uppercase
+void dctoupper(dcstr*);
+//convert entire string to lowercase
+void dctolower(dcstr*);
+//check if string is uppercase
+int dcisupper(dcstr*);
+//check if string is lowercase
+int dcislower(dcstr*);
+//compare two strings
+int dcstrcmp(dcstr*, dcstr*);
 
 //struct for dcfarray
 typedef struct dcfArray{
