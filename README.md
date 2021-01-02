@@ -50,11 +50,12 @@ What follows are the DaiCy datatypes and some of the important functions associa
  - `int dcnum_words(dcstr *str)` : number of words in the string.
  - `void dccapitalize(dcstr *str)` : capitalize the first letter of each word in the string.
  
- #### To be added:
- - dctoupper()
- - dctolower()
- - dcisupper()
- - dcislower()
+ #### Recently Added
+ - `void dctoupper(dcstr *str)`
+ - `void dctolower(dcstr *str)`
+ - `int dcislower(dcstr *str)`
+ - `int dcisupper(dcstr *str)`
+ - `int dcstrcmp(dcstr *str1, dcstr *str2)`
  
   ## 4. DaiCy Matrix (dcmat)
  
