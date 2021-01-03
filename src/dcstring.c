@@ -135,6 +135,13 @@ void dccapitalize(dcstr *str){
 }
 
 void dctoupper(dcstr *str){
+	/*
+	Convert entire dcstring to uppercase
+
+	Parameters
+	----------
+	str: dcstr pointer
+	*/
 	for(int i=0;i<str->length; i++){
 		if(str->data[i] >= 97 && str->data[i] <= 122)
 			str->data[i] -= 32;
@@ -142,6 +149,13 @@ void dctoupper(dcstr *str){
 }
 
 void dctolower(dcstr *str){
+	/*
+	Convert entire dcstring to lowercase
+
+	Parameters
+	----------
+	str: dcstr pointer
+	*/
 	for(int i=0;i<str->length; i++){
 		if(str->data[i] >= 65 && str->data[i] <= 90)
 			str->data[i] += 32;
@@ -149,6 +163,19 @@ void dctolower(dcstr *str){
 }
 
 int dcislower(dcstr *str){
+	/*
+	Return 1 if all characters of dcstring are lowercase
+	otherwise returns zero
+
+	Parameters
+	----------
+	str: dcstr pointer
+
+	Returns
+	-------
+	1: if all characters in the string are lowercase
+	0: if all characters in the string are uppercase
+	*/
 	for(int i=0;i<str->length; i++){
 		if(str->data[i] >= 65 && str->data[i] <= 90){
 			return 0;
@@ -158,6 +185,19 @@ int dcislower(dcstr *str){
 }
 
 int dcisupper(dcstr *str){
+	/*
+	Return 1 if all characters of dcstring are uppercase
+	otherwise returns zero
+
+	Parameters
+	----------
+	str: dcstr pointer
+
+	Returns
+	-------
+	1: if all characters in the string are uppercase
+	0: if all characters in the string are lowercase
+	*/
 	for(int i=0;i<str->length; i++){
 		if(str->data[i] >= 97 && str->data[i] <= 122){
 				return 0;
@@ -167,6 +207,25 @@ int dcisupper(dcstr *str){
 }
 
 int dcstrcmp(dcstr *str1, dcstr *str2){
+	/*
+	Compare the two dcstrings to decide lexical order
+
+	Parameters
+	----------
+	str1: dcstr pointer for string-1
+	str2: dcstr pointer for string-2
+
+	Returns
+	-------
+	1: if string-1 appears before string-2 in alphabetical order
+	0: if string-1 and string-2 are the same strings
+	-1: if string-1 appear after string-2 in alphabetical order
+
+	Note
+	----
+	This function first converts both strings to lower case and then 
+	performs the comparison
+	*/
 	int i = 0;
 	dcstr c1;
 	dcstr c2;
