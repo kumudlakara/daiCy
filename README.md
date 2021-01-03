@@ -49,6 +49,11 @@ What follows are the DaiCy datatypes and some of the important functions associa
  - `dcstr dcstrconcat(dcstr *str1, dcstr *str2)` : concatenate two strings and return the new string
  - `int dcnum_words(dcstr *str)` : number of words in the string.
  - `void dccapitalize(dcstr *str)` : capitalize the first letter of each word in the string.
+ - `void dctoupper(dcstr *str)` : convert entire string to lowercase
+ - `void dctolower(dcstr *str)` : convert entire string to uppercase
+ - `int dcislower(dcstr *str)` : returns 1 if all characters in the string are lowercase and returns 0 otherwise
+ - `int dcisupper(dcstr *str)` : returns 1 if all characters in the string are uppercase and returns 0 otherwise
+ - `int dcstrcmp(dcstr *str1, dcstr *str2)` : compares the two strings and returns 1, 0 or -1 accordingly
  
  #### Recently Added
  - `void dctoupper(dcstr *str)`
