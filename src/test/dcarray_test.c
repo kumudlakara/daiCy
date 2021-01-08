@@ -33,7 +33,13 @@ int main(){
 	for(int i = 0; i<b.size; i++){
 		printf("%d ",b.data[i]);
 	}
-
+	printf("\n");
+	int t[4] = {1,2,3,4};
+	dcarr q = todcarr(t, 4);
+	printf("after todcarr\n");
+	for(int i = 0; i<q.size; i++){
+		printf("%d ",q.data[i]);
+	}
 	printf("\n");
 	dcexpand(&a);
 

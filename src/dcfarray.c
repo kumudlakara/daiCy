@@ -202,3 +202,12 @@ void dcfsort(dcfarr *arr, char order[]){
 	}
 }
 
+dcfarr todcfarr(float arr[], int size){
+	dcfarr retarr;
+	dcfarray(&retarr);
+	retarr.size = size;
+	for(int i=0; i<retarr.size; i++){
+		retarr.data[i] = arr[i];
+	}
+	return retarr;
+}

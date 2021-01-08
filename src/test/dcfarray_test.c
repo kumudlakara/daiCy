@@ -33,6 +33,13 @@ int main(){
 	for(int i = 0; i<b.size; i++){
 		printf("%f ",b.data[i]);
 	}
+	printf("\n");
+	float t[4] = {1.23,2.56,3.789,4.88};
+	dcfarr q = todcfarr(t, 4);
+	printf("after todcfarr\n");
+	for(int i = 0; i<q.size; i++){
+		printf("%f ",q.data[i]);
+	}
 
 	printf("\n");
 	dcfexpand(&a);

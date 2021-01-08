@@ -27,6 +27,8 @@ int dcget(dcarr*, int index);
 dcarr dccopy(dcarr*);
 //sort the dcarray
 void dcsort(dcarr*, char order[]);
+//convert vanilla array to dcarray
+dcarr todcarr(int*, int);
 
 
 //struct for dcmatrix
@@ -36,7 +38,7 @@ typedef struct dcMatrix{
 	int **data;
 }dcmat;
 
-//initialize the dcmatric
+//initialize the dcmatrix
 void dcmatrix(dcmat*, int r, int c);
 //add two dcmats
 dcmat dcmatadd(dcmat*, dcmat*);
@@ -54,7 +56,7 @@ dcmat dcmatcopy(dcmat*);
 int dcmattrace(dcmat*);
 //display the dcmat
 void dcmatshow(dcmat*);
-//convert to matrix to dcmat
+//convert vanilla matrix to dcmat
 dcmat todcmat(int **mat, int r, int c);
 //find transpose of dcmat
 dcmat dcmattranspose(dcmat*);
@@ -115,6 +117,8 @@ float dcfget(dcfarr*, int index);
 dcfarr dcfcopy(dcfarr*);
 //sort the array
 void dcfsort(dcfarr*, char order[]);
+//convert vanilla array to dcarray
+dcfarr todcfarr(float*, int);
 
 
 //struct for dcstacks

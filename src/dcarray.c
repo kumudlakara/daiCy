@@ -202,3 +202,12 @@ void dcsort(dcarr *arr, char order[]){
 	}
 }
 
+dcarr todcarr(int arr[], int size){
+	dcarr retarr;
+	dcarray(&retarr);
+	retarr.size = size;
+	for(int i=0; i<retarr.size; i++){
+		retarr.data[i] = arr[i];
+	}
+	return retarr;
+}
