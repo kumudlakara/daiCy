@@ -66,6 +66,9 @@ What follows are the DaiCy datatypes and some of the important functions associa
  - `int dcisupper(dcstr *str)`
  - `int dcstrcmp(dcstr *str1, dcstr *str2)`
  
+ #### To add
+ - `dcstr todcstr(char s[])`
+ 
   ## 4. DaiCy Matrix (dcmat)
  
  dcmat is the matrix datatype that daiCy provides. It introduces the ability to add, subtract, mulitply matrices, find transose of a matrix and more. 
