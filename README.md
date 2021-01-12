@@ -68,6 +68,7 @@ What follows are the DaiCy datatypes and some of the important functions associa
  
  #### To add
  - `dcstr todcstr(char s[])`
+ - `dcstr dcsubstr(dcstr *str, int start, int end)`
  
   ## 4. DaiCy Matrix (dcmat)
  
