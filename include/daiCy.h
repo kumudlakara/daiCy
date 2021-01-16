@@ -2,6 +2,8 @@
 #define DEFAULT_ORDER "ASC"
 #define STACK_SIZE 100
 #define QUEUE_SIZE 100
+#define DCTRUE 1
+#define DCFALSE 0
 
 //struct for dcarray
 typedef struct dcArray{
