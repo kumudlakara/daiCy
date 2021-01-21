@@ -64,13 +64,6 @@ What follows are the DaiCy datatypes and some of the important functions associa
  - `int dcisupper(dcstr *str)` : returns 1 if all characters in the string are uppercase and returns 0 otherwise
  - `int dcstrcmp(dcstr *str1, dcstr *str2)` : compares the two strings and returns 1, 0 or -1 accordingly
  
- #### Recently Added
- - `void dctoupper(dcstr *str)`
- - `void dctolower(dcstr *str)`
- - `int dcislower(dcstr *str)`
- - `int dcisupper(dcstr *str)`
- - `int dcstrcmp(dcstr *str1, dcstr *str2)`
- 
  #### To add
  - `dcstr todcstr(char s[])`
  - `dcstr dcsubstr(dcstr *str, int start, int end)`
