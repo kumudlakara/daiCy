@@ -43,6 +43,10 @@ What follows are the DaiCy datatypes and some of the important functions associa
  - `void dcfsort(dcfarr *arr, char *order)` : sort the dcarray in  ascending or descending order. DaiCy uses quick sort for all sorting functions given its favourable time complexity.
  - `dcfarr todcfarr(float arr[], int size)` : convert vanilla C array of floating type to dcfarray so as to make use of all advantages of dcfarray.
  
+  
+  #### To add
+ - `dcfarr dcresizefarr(dcfarr *arr)`
+ - `dcfarr dcfswap(float, float)`
  
  *Note: C is not an OOP language and hence doesnot support polymorphism which means functions like sort, append, expand etc which are essentially the same need to be defined with separate names for separate datatypes and that is what has been done or DaiCy as well.*
  
