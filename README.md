@@ -24,8 +24,9 @@ What follows are the DaiCy datatypes and some of the important functions associa
  
  #### To add
  - `dcarr dcresizearr(dcarr *arr)`
+ - `dcarr dcswap(int, int)`
  
- *note: the "todc" property has not been added for all datatypes as of now. dcarray, dcfarray and dcmatrix*
+ *note: the "todc" property has not been added for all datatypes as of now: dcarray, dcfarray and dcmatrix*
  
  
  ## 2. DaiCy FloatArray (dcfarr)
@@ -42,6 +43,10 @@ What follows are the DaiCy datatypes and some of the important functions associa
  - `void dcfsort(dcfarr *arr, char *order)` : sort the dcarray in  ascending or descending order. DaiCy uses quick sort for all sorting functions given its favourable time complexity.
  - `dcfarr todcfarr(float arr[], int size)` : convert vanilla C array of floating type to dcfarray so as to make use of all advantages of dcfarray.
  
+  
+  #### To add
+ - `dcfarr dcresizefarr(dcfarr *arr)`
+ - `dcfarr dcfswap(float, float)`
  
  *Note: C is not an OOP language and hence doesnot support polymorphism which means functions like sort, append, expand etc which are essentially the same need to be defined with separate names for separate datatypes and that is what has been done or DaiCy as well.*
  
@@ -62,13 +67,6 @@ What follows are the DaiCy datatypes and some of the important functions associa
  - `int dcislower(dcstr *str)` : returns 1 if all characters in the string are lowercase and returns 0 otherwise
  - `int dcisupper(dcstr *str)` : returns 1 if all characters in the string are uppercase and returns 0 otherwise
  - `int dcstrcmp(dcstr *str1, dcstr *str2)` : compares the two strings and returns 1, 0 or -1 accordingly
- 
- #### Recently Added
- - `void dctoupper(dcstr *str)`
- - `void dctolower(dcstr *str)`
- - `int dcislower(dcstr *str)`
- - `int dcisupper(dcstr *str)`
- - `int dcstrcmp(dcstr *str1, dcstr *str2)`
  
  #### To add
  - `dcstr todcstr(char s[])`
