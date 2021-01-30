@@ -21,10 +21,11 @@ What follows are the DaiCy datatypes and some of the important functions associa
  - `void dcsort(dcarr *arr, char *order)` : sort the dcarray in  ascending or descending order. DaiCy uses quick sort for all sorting functions given its favourable time complexity.
  - `dcarr todcarr(int arr[], int size)` : convert vanilla C array to dcarray so as to make use of all advantages of dcarray.
  
+  #### Recently added
+  - `void dcswaparr(dcarr*, int, int)`
  
  #### To add
  - `dcarr dcresizearr(dcarr *arr)`
- - `dcarr dcswap(int, int)`
  
  *note: the "todc" property has not been added for all datatypes as of now: dcarray, dcfarray and dcmatrix*
  
