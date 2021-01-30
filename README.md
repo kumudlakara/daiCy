@@ -26,7 +26,7 @@ What follows are the DaiCy datatypes and some of the important functions associa
  - `dcarr dcresizearr(dcarr *arr)`
  - `dcarr dcswap(int, int)`
  
- *note: the "todc" property has not been added for all datatypes as of now. dcarray, dcfarray and dcmatrix*
+ *note: the "todc" property has not been added for all datatypes as of now: dcarray, dcfarray and dcmatrix*
  
  
  ## 2. DaiCy FloatArray (dcfarr)
