@@ -41,6 +41,12 @@ int main(){
 		printf("%d ",q.data[i]);
 	}
 	printf("\n");
+	dcswaparr(&q, 0, 2);
+	printf("after dcswaparr\n");
+	for(int i = 0; i<q.size; i++){
+		printf("%d ",q.data[i]);
+	}
+	printf("\n");
 	dcexpand(&a);
 
 }

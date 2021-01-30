@@ -31,6 +31,8 @@ dcarr dccopy(dcarr*);
 void dcsort(dcarr*, char order[]);
 //convert vanilla array to dcarray
 dcarr todcarr(int*, int);
+//swap two values in the array given their indices
+void dcswaparr(dcarr*, int, int);
 
 
 //struct for dcmatrix
