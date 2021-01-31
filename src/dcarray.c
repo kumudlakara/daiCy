@@ -213,6 +213,15 @@ dcarr todcarr(int arr[], int size){
 }
 
 void dcswaparr(dcarr *arr, int i, int j){
+	/*
+	Swap two array elements given their indices
+
+	Parameters
+	----------
+	arr: dcarr pointer
+	i: array index of type int
+	j: array index of type int
+	*/
 	if(i >= arr->size || j >= arr->size){
 		printf("DaiCyError: array index out of bounds. ");
 		printf("Unable to swap array elements.\n");
