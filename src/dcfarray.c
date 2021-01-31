@@ -211,3 +211,15 @@ dcfarr todcfarr(float arr[], int size){
 	}
 	return retarr;
 }
+
+void dcswapfarr(dcfarr *arr, int i, int j){
+	if(i >= arr->size || j >= arr->size){
+		printf("DaiCyError: array index out of bounds. ");
+		printf("Unable to swap array elements.\n");
+		return;
+	}
+
+	float temp = arr->data[i];
+	arr->data[i] = arr->data[j];
+	arr->data[j] = temp;
+}

@@ -40,7 +40,12 @@ int main(){
 	for(int i = 0; i<q.size; i++){
 		printf("%f ",q.data[i]);
 	}
-
+	printf("\n");
+	printf("after dcswapfarr:\n");
+	dcswapfarr(&q, 5, 2);
+	for(int i = 0; i<q.size; i++){
+		printf("%f ",q.data[i]);
+	}
 	printf("\n");
 	dcfexpand(&a);
 

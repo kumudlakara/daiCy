@@ -123,6 +123,8 @@ dcfarr dcfcopy(dcfarr*);
 void dcfsort(dcfarr*, char order[]);
 //convert vanilla array to dcarray
 dcfarr todcfarr(float*, int);
+//swap two values in the array given their indices
+void dcswapfarr(dcfarr*, int, int);
 
 
 //struct for dcstacks
