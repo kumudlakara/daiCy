@@ -96,6 +96,8 @@ int dcisupper(dcstr*);
 int dcislower(dcstr*);
 //compare two strings
 int dcstrcmp(dcstr*, dcstr*);
+//return substring of a given string
+dcstr dcsubstr(dcstr*, int, int);
 
 //struct for dcfarray
 typedef struct dcfArray{

@@ -251,3 +251,20 @@ int dcstrcmp(dcstr *str1, dcstr *str2){
 }
 return 0;
 }
+
+dcstr dcsubstr(dcstr *str, int i, int j){
+	if(i>j){
+		printf("DaiCyError: Start index of substring is greater than End index. Unable to get substring.\n");
+		exit(0);
+	}
+
+	int k=0;
+	dcstr stemp;
+	stemp.data = (char*)malloc(sizeof(char)*str->length);
+	stemp.length = j-i;
+	for(int c=i, k=0; c<j; c++){
+		stemp.data[k++] = str->data[c];
+	}
+	stemp.data[j-i+1] = '\0';
+	return stemp;
+}

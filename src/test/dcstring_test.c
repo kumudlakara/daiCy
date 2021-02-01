@@ -25,6 +25,8 @@ int main(){
 	printf("After dctoupper: %s\n", s.data);
 	dctolower(&s);
 	printf("After dctolower: %s\n", s.data);
+	dcstr substr = dcsubstr(&s, 0, 3);
+	printf("After dcsubstr string is: %s\n", substr.data);
 	printf("dcstrcmp: %d\n", dcstrcmp(&p, &s));
 	dcstrfree(&s);
 
