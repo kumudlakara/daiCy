@@ -45,7 +45,7 @@ What follows are the DaiCy datatypes and some of the important functions associa
  - `void dcswapfarr(dcfarr*, int, int)` : swap two elements of dcfarray given their indices.
   
  
- *Note: C is not an OOP language and hence doesnot support polymorphism which means functions like sort, append, expand etc which are essentially the same need to be defined with separate names for separate datatypes and that is what has been done or DaiCy as well.*
+ *Note: C is not an OOP language and hence doesnot support polymorphism which means functions like sort, append, expand etc which are essentially the same need to be defined with separate names for separate datatypes and that is what has been done for DaiCy as well.*
  
  
  ## 3. DaiCy String (dcstr)
