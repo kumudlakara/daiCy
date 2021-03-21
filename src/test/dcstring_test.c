@@ -28,6 +28,9 @@ int main(){
 	dcstr substr = dcsubstr(&s, 0, 3);
 	printf("After dcsubstr string is: %s\n", substr.data);
 	printf("dcstrcmp: %d\n", dcstrcmp(&p, &s));
+	char str[]="hello todc demo";
+	dcstr z = todcstr(str);
+	printf("After todcstr: %s\n", z.data);
 	dcstrfree(&s);
 
 }

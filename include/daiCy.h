@@ -98,6 +98,8 @@ int dcislower(dcstr*);
 int dcstrcmp(dcstr*, dcstr*);
 //return substring of a given string
 dcstr dcsubstr(dcstr*, int, int);
+//convert character array to dcstring
+dcstr todcstr(char*);
 
 //struct for dcfarray
 typedef struct dcfArray{

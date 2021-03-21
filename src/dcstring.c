@@ -268,3 +268,20 @@ dcstr dcsubstr(dcstr *str, int i, int j){
 	stemp.data[j-i+1] = '\0';
 	return stemp;
 }
+
+dcstr todcstr(char s[]){
+	/*
+	Convert character array tp dcstring
+
+	Parameters
+	----------
+	s: character array
+
+	Returns
+	-------
+	retstr: equivalent dcstring of the input character array
+	*/
+	dcstr retstr;
+	dcstring(&retstr, s);
+	return retstr;
+}
