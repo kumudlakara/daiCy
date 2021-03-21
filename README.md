@@ -24,7 +24,7 @@ What follows are the DaiCy datatypes and some of the important functions associa
   #### Recently added
   - `void dcswaparr(dcarr*, int, int)` : swap two elements of dcarray given their indices.
  
- *note: the "todc" property has not been added for all datatypes as of now: dcarray, dcfarray and dcmatrix*
+ *note: the "todc" property has not been added for all datatypes as of now it is available only for: dcarray, dcfarray and dcmatrix*
  
  
  ## 2. DaiCy FloatArray (dcfarr)
