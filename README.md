@@ -24,7 +24,7 @@ What follows are the DaiCy datatypes and some of the important functions associa
   #### Recently added
   - `void dcswaparr(dcarr*, int, int)` : swap two elements of dcarray given their indices.
  
- *note: the "todc" property has not been added for all datatypes as of now: dcarray, dcfarray and dcmatrix*
+ *note: the "todc" property has not been added for all datatypes as of now it is available only for: dcarray, dcfarray and dcmatrix*
  
  
  ## 2. DaiCy FloatArray (dcfarr)
@@ -45,7 +45,7 @@ What follows are the DaiCy datatypes and some of the important functions associa
  - `void dcswapfarr(dcfarr*, int, int)` : swap two elements of dcfarray given their indices.
   
  
- *Note: C is not an OOP language and hence doesnot support polymorphism which means functions like sort, append, expand etc which are essentially the same need to be defined with separate names for separate datatypes and that is what has been done or DaiCy as well.*
+ *Note: C is not an OOP language and hence doesnot support polymorphism which means functions like sort, append, expand etc which are essentially the same need to be defined with separate names for separate datatypes and that is what has been done for DaiCy as well.*
  
  
  ## 3. DaiCy String (dcstr)
@@ -65,9 +65,12 @@ What follows are the DaiCy datatypes and some of the important functions associa
  - `int dcisupper(dcstr *str)` : returns 1 if all characters in the string are uppercase and returns 0 otherwise
  - `int dcstrcmp(dcstr *str1, dcstr *str2)` : compares the two strings and returns 1, 0 or -1 accordingly
  
+ #### Recently added
+ - `dcstr dcsubstr(dcstr*, int, int)` : returns substring of dcstring given the starting and ending index.
+ 
  #### To add
  - `dcstr todcstr(char s[])`
- - `dcstr dcsubstr(dcstr *str, int start, int end)`
+ 
  
   ## 4. DaiCy Matrix (dcmat)
  
