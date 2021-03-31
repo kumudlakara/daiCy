@@ -67,7 +67,7 @@ What follows are the DaiCy datatypes and some of the important functions associa
  - `dcstr dcsubstr(dcstr*, int, int)` : returns substring of dcstring given the starting and ending index.
 
  #### Recently added
- - `dcstr todcstr(char s[])` : converts a vanilla character array to a dcstring so that it can make use of all the functions and capabilities of DaiCy.
+ - `dcstr todcstr(char s[])` : converts a vanilla character array to a dcstring so as to make use of all the functions and capabilities of DaiCy.
  
  
  
