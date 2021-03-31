@@ -64,12 +64,11 @@ What follows are the DaiCy datatypes and some of the important functions associa
  - `int dcislower(dcstr *str)` : returns 1 if all characters in the string are lowercase and returns 0 otherwise
  - `int dcisupper(dcstr *str)` : returns 1 if all characters in the string are uppercase and returns 0 otherwise
  - `int dcstrcmp(dcstr *str1, dcstr *str2)` : compares the two strings and returns 1, 0 or -1 accordingly
- 
- #### Recently added
  - `dcstr dcsubstr(dcstr*, int, int)` : returns substring of dcstring given the starting and ending index.
+
+ #### Recently added
+ - `dcstr todcstr(char s[])` : converts a vanilla character array to a dcstring so that it can make use of all the functions and capabilities of DaiCy.
  
- #### To add
- - `dcstr todcstr(char s[])`
  
  
   ## 4. DaiCy Matrix (dcmat)
