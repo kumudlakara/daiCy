@@ -1,7 +1,7 @@
 # DaiCy :blossom: 
 C library for Linux
 
-DaiCy introduces enhanced features for the C language such as automatic array size expansion, dcstring datatype, dcmatrix datatype and much more. Each DaiCy datatype makes coding in the C language much more convinient by introducing functionality such as sorting, reversing, string manipulation etc. DaiCy aims to bridge the gap between C and the modern day programming languages. 
+DaiCy introduces enhanced features for the C language such as automatic array size expansion, dcstring datatype, dcmatrix datatype and much more. Each DaiCy datatype makes coding in the C language much more convenient by introducing functionality such as sorting, reversing, string manipulation etc. DaiCy aims to bridge the gap between C and the modern day programming languages. 
 
 What follows are the DaiCy datatypes and some of the important functions associated with them:
 
