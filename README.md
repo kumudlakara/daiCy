@@ -72,7 +72,7 @@ What follows are the DaiCy datatypes and some of the important functions associa
  
   ## 4. DaiCy Matrix (dcmat)
  
- dcmat is the matrix datatype that daiCy provides. It introduces the ability to add, subtract, mulitply matrices, find transose of a matrix and more. 
+ dcmat is the matrix datatype that daiCy provides. It introduces the ability to add, subtract, mulitply matrices, find transpose of a matrix and more. 
  
  *Note: This data type also introduces the new feautre of converting a normal C datatype to a DaiCy datatype. This feature will soon be added for all daiCy datatypes allowing the user to switch over to the daiCy datatypes at any point.*
  
